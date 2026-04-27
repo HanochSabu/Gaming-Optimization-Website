@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Optimization</title>
+
+<style>
+
+body{
+margin:0;
+font-family:'Segoe UI', sans-serif;
+background: radial-gradient(circle at top, #050505, #000);
+color:white;
+}
+
+/* NAVBAR */
+.topnav {
+  background:#000;
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  padding:15px;
+  border-bottom:2px solid #00ffff;
+}
+
+.topnav a{
+  color:#00ffff;
+  text-decoration:none;
+  font-weight:bold;
+  padding:8px 12px;
+}
+
+.topnav a.active{
+  background:#00ffff;
+  color:black;
+  border-radius:6px;
+}
+
+/* SECTION */
+.section{
+max-width:1100px;
+margin:auto;
+padding:60px 20px;
+}
+
+/* TABLE */
+.build-table{
+width:100%;
+border-collapse:collapse;
+background:#111;
+border-radius:10px;
+overflow:hidden;
+}
+
+.build-table th{
+background:#00ffff;
+color:black;
+padding:12px;
+}
+
+.build-table td{
+padding:12px;
+text-align:center;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.build-table tr:hover{
+background:#1a1a1a;
+}
+
+/* BOX */
+.box{
+background:#111;
+padding:20px;
+border-radius:10px;
+margin-top:20px;
+}
+
+/* TOOL */
+select{
+padding:8px;
+margin-top:5px;
+border-radius:6px;
+width:250px;
+}
+
+button{
+margin-top:10px;
+padding:10px 20px;
+background:#00ffff;
+border:none;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff00ff;
+color:white;
+}
+
+/* RESULT */
+.result-box{
+margin-top:20px;
+background:#111;
+padding:15px;
+border-radius:10px;
+line-height:1.6;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+border-top:2px solid #00ffff;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="topnav">
+  <a href="index.html">Home</a>
+  <a href="performance.html">Performance</a>
+  <a href="builds.html">PC Builds</a>
+  <a class="active" href="optimization.html">Optimization</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="section">
+
+<h2>📊 Performance Optimization Analysis</h2>
+
+<p>This page shows how different optimizations impact FPS and system performance.</p>
+
+<table class="build-table">
+
+<tr>
+<th>Optimization</th>
+<th>Before</th>
+<th>After</th>
+<th>Impact</th>
+</tr>
+
+<tr>
+<td>Game Mode</td>
+<td>80 FPS</td>
+<td>95 FPS</td>
+<td>+15 FPS</td>
+</tr>
+
+<tr>
+<td>DLSS / FSR</td>
+<td>70 FPS</td>
+<td>110 FPS</td>
+<td>+40 FPS</td>
+</tr>
+
+<tr>
+<td>Lower Shadows</td>
+<td>85 FPS</td>
+<td>120 FPS</td>
+<td>+35 FPS</td>
+</tr>
+
+<tr>
+<td>Close Background Apps</td>
+<td>90 FPS</td>
+<td>110 FPS</td>
+<td>+20 FPS</td>
+</tr>
+
+<tr>
+<td>Ethernet vs WiFi</td>
+<td>60 ms</td>
+<td>25 ms</td>
+<td>Lower latency</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="section">
+
+<h3>⚡ Estimate Optimization Impact</h3>
+
+<div class="box">
+
+<label>System Level:</label><br>
+<select id="system">
+<option>Low-End PC</option>
+<option>Mid-Range PC</option>
+<option>High-End PC</option>
+</select>
+
+<br><br>
+
+<label>Optimization Level:</label><br>
+<select id="opt">
+<option>Basic Optimization</option>
+<option>Advanced Optimization</option>
+</select>
+
+<br><br>
+
+<button onclick="optimizeCalc()">Calculate FPS Gain</button>
+
+<div id="optResult" class="result-box"></div>
+
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 Tech Performance Hub</p>
+</footer>
+
+<script>
+
+function optimizeCalc(){
+
+let system = document.getElementById("system").value;
+let opt = document.getElementById("opt").value;
+
+let gain = 0;
+
+if(system === "Low-End PC") gain = 20;
+if(system === "Mid-Range PC") gain = 30;
+if(system === "High-End PC") gain = 15;
+
+if(opt === "Advanced Optimization") gain += 20;
+
+document.getElementById("optResult").innerHTML = `
+<b>Estimated FPS Improvement:</b> +${gain} FPS<br><br>
+Optimization techniques can significantly improve performance depending on your system.
+`;
+
+}
+
+</script>
+
+</body>
+</html>

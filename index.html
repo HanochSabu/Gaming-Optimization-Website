@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tech Performance Hub</title>
+
+<style>
+
+/* ===== GLOBAL ===== */
+body{
+margin:0;
+font-family:'Segoe UI', sans-serif;
+background: radial-gradient(circle at top, #050505, #000);
+color:white;
+}
+
+/* ===== NAVBAR (CLEAN FIX) ===== */
+.topnav {
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 18px 0;
+  border-bottom: 2px solid #00ffff;
+  box-shadow: 0 0 15px rgba(0,255,255,0.3);
+}
+
+.topnav a {
+  color: #00ffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 14px;
+  transition: 0.3s;
+  border-radius: 6px;
+}
+
+.topnav a:hover {
+  color: #ff00ff;
+  background: #111;
+}
+
+.topnav a.active {
+  background: #00ffff;
+  color: black;
+}
+
+/* ===== HERO ===== */
+.hero{
+text-align:center;
+padding:120px 20px 80px;
+}
+
+.hero h1{
+font-size:52px;
+margin-bottom:10px;
+text-shadow:0 0 15px #00ffff;
+}
+
+.hero p{
+max-width:650px;
+margin:auto;
+opacity:0.85;
+}
+
+.hero .btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+background:#00ffff;
+color:black;
+text-decoration:none;
+font-weight:bold;
+border-radius:6px;
+transition:0.3s;
+}
+
+.hero .btn:hover{
+background:#ff00ff;
+color:white;
+}
+
+/* ===== SECTION ===== */
+.section{
+padding:60px 40px;
+max-width:1100px;
+margin:auto;
+}
+
+.section h2{
+color:#00ffff;
+margin-bottom:20px;
+}
+
+/* ===== CARDS ===== */
+.cards{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.card{
+background:#111;
+padding:18px;
+flex:1;
+min-width:250px;
+border-radius:10px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 0 15px #00ffff;
+}
+
+.card img{
+width:100%;
+border-radius:8px;
+margin-bottom:10px;
+}
+
+/* ===== TABLE ===== */
+.build-table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+background:#111;
+border-radius:8px;
+overflow:hidden;
+}
+
+.build-table th{
+background:#00ffff;
+color:black;
+padding:10px;
+}
+
+.build-table td{
+padding:10px;
+border-bottom:1px solid rgba(255,255,255,0.1);
+text-align:center;
+}
+
+.build-table tr:hover{
+background:#1a1a1a;
+}
+
+/* ===== FOOTER ===== */
+footer{
+text-align:center;
+padding:20px;
+border-top:2px solid #00ffff;
+margin-top:40px;
+font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<div class="topnav">
+  <a class="active" href="index.html">Home</a>
+  <a href="performance.html">Performance</a>
+  <a href="builds.html">PC Builds</a>
+  <a href="optimization.html">Optimization</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+
+<h1>Boost Your Gaming Performance</h1>
+
+<p>
+Learn how to increase FPS, optimize your system, and build powerful gaming PCs using simple and effective techniques.
+</p>
+
+<a href="performance.html" class="btn">Start Optimizing</a>
+
+</div>
+
+<!-- ===== FEATURED GUIDES ===== -->
+<div class="section">
+
+<h2>Featured Guides</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1593642634367-d91a135587b5">
+<h3>Increase FPS</h3>
+<p>Optimize settings like shadows, DLSS, and resolution for smoother gameplay.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7">
+<h3>PC Build Guide</h3>
+<p>Compare builds for budget, mid-range, and high-end gaming performance.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1591488320449-011701bb6704">
+<h3>GPU Optimization</h3>
+<p>Improve GPU performance using simple control panel and in-game tweaks.</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- ===== BUILDS PREVIEW ===== -->
+<div class="section">
+
+<h2>Popular PC Builds</h2>
+
+<table class="build-table">
+
+<tr>
+<th>Build</th>
+<th>CPU</th>
+<th>GPU</th>
+<th>Platform</th>
+<th>Performance</th>
+</tr>
+
+<tr>
+<td>Budget</td>
+<td>Ryzen 5 5600</td>
+<td>RTX 2060</td>
+<td>AM4</td>
+<td>1080p Medium–High (60–100 FPS)</td>
+</tr>
+
+<tr>
+<td>Mid Range</td>
+<td>Ryzen 5 7600</td>
+<td>RTX 4060</td>
+<td>AM5</td>
+<td>1080p Ultra / 1440p High (90–160 FPS)</td>
+</tr>
+
+<tr>
+<td>High End</td>
+<td>Ryzen 7 7800X3D</td>
+<td>RTX 5090</td>
+<td>AM5</td>
+<td>1440p Ultra / 4K Gaming (120+ FPS)</td>
+</tr>
+
+</table>
+
+<!-- ===== ABOUT ===== -->
+<div class="section">
+
+<h2>About This Website</h2>
+
+<p>
+Tech Performance Hub is designed for gamers and PC enthusiasts who want to improve performance and get higher FPS without unnecessary upgrades. The site provides optimization guides, PC build recommendations, and tools that help users understand how to get the best performance from their system.
+</p>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+<p>© 2026 Tech Performance Hub | Hanoch Sabu</p>
+</footer>
+
+</body>
+</html>

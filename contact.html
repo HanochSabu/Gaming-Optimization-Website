@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contact</title>
+
+<style>
+
+body{
+margin:0;
+font-family:'Segoe UI', sans-serif;
+background: radial-gradient(circle at top, #050505, #000);
+color:white;
+}
+
+/* NAVBAR */
+.topnav {
+  background:#000;
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  padding:15px;
+  border-bottom:2px solid #00ffff;
+}
+
+.topnav a{
+  color:#00ffff;
+  text-decoration:none;
+  font-weight:bold;
+  padding:8px 12px;
+}
+
+.topnav a.active{
+  background:#00ffff;
+  color:black;
+  border-radius:6px;
+}
+
+/* SECTION */
+.section{
+max-width:700px;
+margin:auto;
+padding:60px 20px;
+text-align:center;
+}
+
+/* FORM */
+form{
+margin-top:20px;
+}
+
+input, textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:6px;
+}
+
+button{
+padding:12px;
+background:#00ffff;
+border:none;
+font-weight:bold;
+cursor:pointer;
+width:100%;
+}
+
+button:hover{
+background:#ff00ff;
+color:white;
+}
+
+/* INFO BOX */
+.info{
+margin-top:30px;
+background:#111;
+padding:20px;
+border-radius:10px;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+border-top:2px solid #00ffff;
+margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="topnav">
+  <a href="index.html">Home</a>
+  <a href="performance.html">Performance</a>
+  <a href="builds.html">PC Builds</a>
+  <a href="optimization.html">Optimization</a>
+  <a class="active" href="contact.html">Contact</a>
+</div>
+
+<div class="section">
+
+<h2>📩 Contact Us</h2>
+
+<p>Have questions or feedback? Fill out the form below.</p>
+
+<form>
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea rows="5" placeholder="Your Message"></textarea>
+<button type="submit">Send Message</button>
+</form>
+
+</div>
+<footer>
+<p>© 2026 Tech Performance Hub | Hanoch Sabu</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PC Builds</title>
+
+<style>
+
+body{
+margin:0;
+font-family:'Segoe UI', sans-serif;
+background: radial-gradient(circle at top, #050505, #000);
+color:white;
+}
+
+/* NAVBAR */
+.topnav {
+  background:#000;
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  padding:15px;
+  border-bottom:2px solid #00ffff;
+}
+
+.topnav a{
+  color:#00ffff;
+  text-decoration:none;
+  font-weight:bold;
+  padding:8px 12px;
+}
+
+.topnav a.active{
+  background:#00ffff;
+  color:black;
+  border-radius:6px;
+}
+
+/* SECTION */
+.section{
+max-width:1100px;
+margin:auto;
+padding:60px 20px;
+}
+
+/* TABLE */
+.build-table{
+width:100%;
+border-collapse:collapse;
+background:#111;
+border-radius:10px;
+overflow:hidden;
+}
+
+.build-table th{
+background:#00ffff;
+color:black;
+padding:12px;
+}
+
+.build-table td{
+padding:12px;
+text-align:center;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.build-table tr:hover{
+background:#1a1a1a;
+}
+
+/* BOX */
+.box{
+background:#111;
+padding:20px;
+border-radius:10px;
+margin-top:20px;
+}
+
+/* TOOL */
+select{
+padding:8px;
+margin-top:5px;
+border-radius:6px;
+width:250px;
+}
+
+button{
+margin-top:10px;
+padding:10px 20px;
+background:#00ffff;
+border:none;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff00ff;
+color:white;
+}
+
+/* RESULT */
+.result-box{
+margin-top:20px;
+background:#111;
+padding:15px;
+border-radius:10px;
+line-height:1.6;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+border-top:2px solid #00ffff;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="topnav">
+  <a href="index.html">Home</a>
+  <a href="performance.html">Performance</a>
+  <a class="active" href="builds.html">PC Builds</a>
+  <a href="optimization.html">Optimization</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="section">
+
+<h2>💻 PC Build Recommendations</h2>
+
+<p>These builds are designed for different budgets and performance levels.</p>
+
+<table class="build-table">
+
+<tr>
+<th>Build Tier</th>
+<th>CPU</th>
+<th>GPU</th>
+<th>RAM</th>
+<th>Platform</th>
+<th>Performance</th>
+</tr>
+
+<tr>
+<td>Budget</td>
+<td>Ryzen 5 5600</td>
+<td>RTX 2060</td>
+<td>16GB</td>
+<td>AM4</td>
+<td>1080p Medium–High (60–100 FPS)</td>
+</tr>
+
+<tr>
+<td>Mid Range</td>
+<td>Ryzen 5 7600</td>
+<td>RTX 4060</td>
+<td>32GB</td>
+<td>AM5</td>
+<td>1080p Ultra / 1440p (90–160 FPS)</td>
+</tr>
+
+<tr>
+<td>High End</td>
+<td>Ryzen 7 7800X3D</td>
+<td>RTX 5090</td>
+<td>32GB</td>
+<td>AM5</td>
+<td>1440p Ultra / 4K (120+ FPS)</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="section">
+
+<h3>🛠️ Build Your Own PC</h3>
+
+<div class="box">
+
+<label>CPU:</label><br>
+<select id="cpu">
+<option>Ryzen 5 5600</option>
+<option>Ryzen 5 7600</option>
+<option>Ryzen 7 7800X3D</option>
+</select>
+
+<br><br>
+
+<label>GPU:</label><br>
+<select id="gpu">
+<option>RTX 2060</option>
+<option>RTX 4060</option>
+<option>RTX 5090</option>
+</select>
+
+<br><br>
+
+<label>RAM:</label><br>
+<select id="ram">
+<option>16GB</option>
+<option>32GB</option>
+</select>
+
+<br><br>
+
+<label>Game:</label><br>
+<select id="game">
+<option>Fortnite</option>
+<option>Warzone</option>
+<option>Valorant</option>
+<option>F1 23</option>
+<option>Cyberpunk 2077</option>
+</select>
+
+<br><br>
+
+<button onclick="buildPC()">Estimate Performance</button>
+
+<div id="result" class="result-box"></div>
+
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 Tech Performance Hub</p>
+</footer>
+
+<script>
+
+function buildPC(){
+
+let cpu = document.getElementById("cpu").value;
+let gpu = document.getElementById("gpu").value;
+let ram = document.getElementById("ram").value;
+let game = document.getElementById("game").value;
+
+let fps = 0;
+
+/* GPU BASE */
+if(gpu === "RTX 2060") fps = 70;
+if(gpu === "RTX 4060") fps = 120;
+if(gpu === "RTX 5090") fps = 200;
+
+/* CPU BOOST */
+if(cpu.includes("7800")) fps += 30;
+if(cpu.includes("7600")) fps += 15;
+
+/* RAM */
+if(ram === "32GB") fps += 10;
+
+/* GAME */
+if(game === "Warzone") fps -= 25;
+if(game === "Cyberpunk 2077") fps -= 50;
+if(game === "F1 23") fps -= 10;
+if(game === "Valorant") fps += 40;
+if(game === "Fortnite") fps += 20;
+
+/* RESULT */
+let level = "";
+if(fps < 80) level = "Low Settings";
+else if(fps < 140) level = "Medium–High Settings";
+else level = "High / Ultra Settings";
+
+document.getElementById("result").innerHTML = `
+<b>Build Summary:</b><br>
+CPU: ${cpu}<br>
+GPU: ${gpu}<br>
+RAM: ${ram}<br>
+Game: ${game}<br><br>
+
+<b>Estimated FPS:</b> ${fps}<br>
+<b>Recommended Settings:</b> ${level}
+`;
+
+}
+
+</script>
+
+</body>
+</html>

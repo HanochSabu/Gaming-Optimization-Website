@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Performance Optimization</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:'Segoe UI', Arial, sans-serif;
+  background:radial-gradient(circle at top, #0b0b0b, #000);
+  color:white;
+  line-height:1.6;
+}
+
+/* NAV */
+.topnav{
+  background:#000;
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  padding:16px 10px;
+  border-bottom:2px solid #00ffff;
+  box-shadow:0 0 15px rgba(0,255,255,0.3);
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.topnav a{
+  color:#00ffff;
+  text-decoration:none;
+  font-weight:bold;
+  padding:9px 14px;
+  border-radius:6px;
+  transition:0.3s;
+}
+
+.topnav a:hover{
+  background:#111;
+  color:#ff00ff;
+}
+
+.topnav a.active{
+  background:#00ffff;
+  color:#000;
+}
+
+/* HERO */
+.hero{
+  max-width:1100px;
+  margin:auto;
+  padding:80px 30px 50px;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:46px;
+  margin-bottom:10px;
+  text-shadow:0 0 18px #00ffff;
+}
+
+.hero p{
+  max-width:780px;
+  margin:auto;
+  color:#d8d8d8;
+}
+
+/* SECTIONS */
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:35px 30px;
+}
+
+.section h2{
+  color:#00ffff;
+  margin-bottom:15px;
+}
+
+/* CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+  gap:18px;
+}
+
+.card{
+  background:#111;
+  border:1px solid rgba(0,255,255,0.18);
+  border-radius:12px;
+  padding:20px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 18px rgba(0,255,255,0.35);
+}
+
+.card h3{
+  margin-top:0;
+  color:#fff;
+}
+
+.card p{
+  color:#d6d6d6;
+}
+
+/* TABLE */
+.optimization-table{
+  width:100%;
+  border-collapse:collapse;
+  background:#111;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 0 14px rgba(0,255,255,0.25);
+}
+
+.optimization-table th{
+  background:#00ffff;
+  color:#000;
+  padding:13px;
+  text-align:center;
+}
+
+.optimization-table td{
+  padding:13px;
+  text-align:center;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.optimization-table tr:hover{
+  background:#1a1a1a;
+}
+
+.badge{
+  padding:5px 10px;
+  border-radius:20px;
+  background:#00ffff;
+  color:#000;
+  font-weight:bold;
+  font-size:13px;
+}
+
+/* CHECKLIST */
+.checklist{
+  background:#111;
+  border-left:4px solid #00ffff;
+  border-radius:10px;
+  padding:20px;
+}
+
+.checklist p{
+  margin:9px 0;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:22px;
+  border-top:2px solid #00ffff;
+  margin-top:45px;
+  color:#d6d6d6;
+}
+</style>
+</head>
+
+<body>
+
+<div class="topnav">
+  <a href="index.html">Home</a>
+  <a class="active" href="performance.html">Performance</a>
+  <a href="builds.html">PC Builds</a>
+  <a href="optimization.html">Optimization</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="hero">
+  <h1>⚡ Gaming Performance Optimization</h1>
+  <p>
+    This page helps gamers improve FPS, reduce input lag, and get smoother gameplay by adjusting Windows settings, GPU settings, internet connection, and in-game graphics options.
+  </p>
+</div>
+
+<div class="section">
+  <h2>Quick Performance Areas</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>🖥️ Windows Settings</h3>
+      <p>Game Mode, power plan, startup apps, and background programs can affect FPS and system responsiveness.</p>
+    </div>
+
+    <div class="card">
+      <h3>🎮 GPU Settings</h3>
+      <p>Drivers, DLSS/FSR, shadow quality, and performance mode can make a major difference in gameplay smoothness.</p>
+    </div>
+
+    <div class="card">
+      <h3>🌐 Network Settings</h3>
+      <p>Ethernet, router stability, and closing background downloads can reduce ping and lag during online games.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Optimization Guide Table</h2>
+
+  <table class="optimization-table">
+    <tr>
+      <th>Category</th>
+      <th>Setting</th>
+      <th>Recommended Action</th>
+      <th>Performance Impact</th>
+    </tr>
+
+    <tr>
+      <td><span class="badge">Windows</span></td>
+      <td>Game Mode</td>
+      <td>Enable in Windows Gaming Settings</td>
+      <td>More stable FPS</td>
+    </tr>
+
+    <tr>
+      <td><span class="badge">Windows</span></td>
+      <td>Power Plan</td>
+      <td>Set to High Performance</td>
+      <td>Better consistency</td>
+    </tr>
+
+    <tr>
+      <td><span class="badge">Windows</span></td>
+      <td>Startup Apps</td>
+      <td>Disable unnecessary startup programs</td>
+      <td>Faster system response</td>
+    </tr>
+
+    <tr>
+      <td><span class="badge">GPU</span></td>
+      <td>Graphics Drivers</td>
+      <td>Update NVIDIA / AMD drivers regularly</td>
+      <td>Improved compatibility</td>
+    </tr>
+
+    <tr>
+      <td><span class="badge">GPU</span></td>
+      <td>DLSS / FSR</td>
+      <td>Enable when supported</td>
+      <td>Major FPS boost</td>
+    </tr>
+
+    <tr>
+      <td><span class="badge">GPU</span></td>
+      <td>Shadow Quality</td>
+      <td>Set shadows to Low or Medium</td>
+      <td>High FPS improvement</td>
+    </tr>
+
+    <tr>
+      <td><span class="badge">Network</span></td>
+      <td>Connection</td>
+      <td>Use Ethernet instead of WiFi if possible</td>
+      <td>Lower ping and lag</td>
+    </tr>
+
+    <tr>
+      <td><span class="badge">Network</span></td>
+      <td>Background Usage</td>
+      <td>Close downloads and streaming apps</td>
+      <td>More stable connection</td>
+    </tr>
+
+    <tr>
+      <td><span class="badge">In-Game</span></td>
+      <td>V-Sync</td>
+      <td>Turn off for competitive games</td>
+      <td>Lower input delay</td>
+    </tr>
+
+    <tr>
+      <td><span class="badge">In-Game</span></td>
+      <td>Anti-Aliasing</td>
+      <td>Lower or disable for extra FPS</td>
+      <td>Moderate FPS boost</td>
+    </tr>
+  </table>
+</div>
+
+<div class="section">
+  <h2>Recommended Settings by Game Type</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Competitive Games</h3>
+      <p><b>Examples:</b> Valorant, CS2, Fortnite</p>
+      <p>Use low shadows, turn off motion blur, disable V-Sync, and prioritize higher FPS over graphics quality.</p>
+    </div>
+
+    <div class="card">
+      <h3>AAA / Story Games</h3>
+      <p><b>Examples:</b> Cyberpunk, Warzone, F1</p>
+      <p>Use medium-high settings, enable DLSS/FSR, and balance visual quality with stable frame rate.</p>
+    </div>
+
+    <div class="card">
+      <h3>Low-End PCs</h3>
+      <p>Use 900p or 1080p low settings, close background apps, and prioritize performance mode when available.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>✅ Quick Checklist Before Gaming</h2>
+
+  <div class="checklist">
+    <p>✔ GPU drivers updated</p>
+    <p>✔ Background apps closed</p>
+    <p>✔ Power mode set to High Performance</p>
+    <p>✔ Game graphics settings adjusted</p>
+    <p>✔ Internet connection stable</p>
+    <p>✔ PC temperatures are not too high</p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Tech Performance Hub | Hanoch Sabu</p>
+</footer>
+
+</body>
+</html>
