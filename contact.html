@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact</title>
 
 <style>
@@ -86,6 +88,16 @@ border-top:2px solid #00ffff;
 margin-top:40px;
 }
 
+/* Keep navigation and wide tables usable on narrow screens. */
+* { box-sizing: border-box; }
+.topnav { flex-wrap: wrap; gap: 8px; }
+.table-scroll { overflow-x: auto; }
+a:focus-visible, button:focus-visible, select:focus-visible { outline: 3px solid #ff00ff; outline-offset: 3px; }
+@media (max-width: 600px) {
+  .hero h1 { font-size: 34px; }
+  .section { padding: 30px 16px; }
+  .card { min-width: 0; }
+}
 </style>
 </head>
 
@@ -103,14 +115,8 @@ margin-top:40px;
 
 <h2>📩 Contact Us</h2>
 
-<p>Have questions or feedback? Fill out the form below.</p>
-
-<form>
-<input type="text" placeholder="Your Name" required>
-<input type="email" placeholder="Your Email" required>
-<textarea rows="5" placeholder="Your Message"></textarea>
-<button type="submit">Send Message</button>
-</form>
+<p>This static site does not collect or send messages.</p>
+<p>For project feedback, <a href="https://github.com/HanochSabu/Gaming-Optimization-Website/issues" style="color:#00ffff">open a GitHub issue</a>. Do not include personal information in public issues.</p>
 
 </div>
 <footer>

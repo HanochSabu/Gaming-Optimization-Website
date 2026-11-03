@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tech Performance Hub</title>
 
 <style>
@@ -154,6 +156,16 @@ margin-top:40px;
 font-size:14px;
 }
 
+/* Keep navigation and wide tables usable on narrow screens. */
+* { box-sizing: border-box; }
+.topnav { flex-wrap: wrap; gap: 8px; }
+.table-scroll { overflow-x: auto; }
+a:focus-visible, button:focus-visible, select:focus-visible { outline: 3px solid #ff00ff; outline-offset: 3px; }
+@media (max-width: 600px) {
+  .hero h1 { font-size: 34px; }
+  .section { padding: 30px 16px; }
+  .card { min-width: 0; }
+}
 </style>
 </head>
 
@@ -189,19 +201,19 @@ Learn how to increase FPS, optimize your system, and build powerful gaming PCs u
 <div class="cards">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1593642634367-d91a135587b5">
+<img alt="Gaming computer equipment" src="https://images.unsplash.com/photo-1593642634367-d91a135587b5">
 <h3>Increase FPS</h3>
 <p>Optimize settings like shadows, DLSS, and resolution for smoother gameplay.</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7">
+<img alt="Gaming computer equipment" src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7">
 <h3>PC Build Guide</h3>
 <p>Compare builds for budget, mid-range, and high-end gaming performance.</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1591488320449-011701bb6704">
+<img alt="Gaming computer equipment" src="https://images.unsplash.com/photo-1591488320449-011701bb6704">
 <h3>GPU Optimization</h3>
 <p>Improve GPU performance using simple control panel and in-game tweaks.</p>
 </div>
@@ -213,9 +225,10 @@ Learn how to increase FPS, optimize your system, and build powerful gaming PCs u
 <!-- ===== BUILDS PREVIEW ===== -->
 <div class="section">
 
-<h2>Popular PC Builds</h2>
+<h2>Example PC Builds</h2>
+<p>Illustrative configurations and FPS ranges; not measured benchmarks or compatibility checks.</p>
 
-<table class="build-table">
+<div class="table-scroll" role="region" aria-label="Scrollable comparison table" tabindex="0"><table class="build-table">
 
 <tr>
 <th>Build</th>
@@ -249,7 +262,9 @@ Learn how to increase FPS, optimize your system, and build powerful gaming PCs u
 <td>1440p Ultra / 4K Gaming (120+ FPS)</td>
 </tr>
 
-</table>
+</table></div>
+
+</div>
 
 <!-- ===== ABOUT ===== -->
 <div class="section">

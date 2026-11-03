@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PC Builds</title>
 
 <style>
@@ -113,6 +115,16 @@ padding:20px;
 border-top:2px solid #00ffff;
 }
 
+/* Keep navigation and wide tables usable on narrow screens. */
+* { box-sizing: border-box; }
+.topnav { flex-wrap: wrap; gap: 8px; }
+.table-scroll { overflow-x: auto; }
+a:focus-visible, button:focus-visible, select:focus-visible { outline: 3px solid #ff00ff; outline-offset: 3px; }
+@media (max-width: 600px) {
+  .hero h1 { font-size: 34px; }
+  .section { padding: 30px 16px; }
+  .card { min-width: 0; }
+}
 </style>
 </head>
 
@@ -130,9 +142,9 @@ border-top:2px solid #00ffff;
 
 <h2>💻 PC Build Recommendations</h2>
 
-<p>These builds are designed for different budgets and performance levels.</p>
+<p>These are illustrative configurations, not a complete parts list or compatibility check. FPS ranges are examples, not measured benchmarks.</p>
 
-<table class="build-table">
+<div class="table-scroll" role="region" aria-label="Scrollable comparison table" tabindex="0"><table class="build-table">
 
 <tr>
 <th>Build Tier</th>
@@ -170,17 +182,18 @@ border-top:2px solid #00ffff;
 <td>1440p Ultra / 4K (120+ FPS)</td>
 </tr>
 
-</table>
+</table></div>
 
 </div>
 
 <div class="section">
 
 <h3>🛠️ Build Your Own PC</h3>
+<p>Demo calculator: fixed GPU values plus CPU, RAM, and game adjustments. It does not detect hardware or account for resolution, drivers, thermals, or graphics presets.</p>
 
 <div class="box">
 
-<label>CPU:</label><br>
+<label for="cpu">CPU:</label><br>
 <select id="cpu">
 <option>Ryzen 5 5600</option>
 <option>Ryzen 5 7600</option>
@@ -189,7 +202,7 @@ border-top:2px solid #00ffff;
 
 <br><br>
 
-<label>GPU:</label><br>
+<label for="gpu">GPU:</label><br>
 <select id="gpu">
 <option>RTX 2060</option>
 <option>RTX 4060</option>
@@ -198,7 +211,7 @@ border-top:2px solid #00ffff;
 
 <br><br>
 
-<label>RAM:</label><br>
+<label for="ram">RAM:</label><br>
 <select id="ram">
 <option>16GB</option>
 <option>32GB</option>
@@ -206,7 +219,7 @@ border-top:2px solid #00ffff;
 
 <br><br>
 
-<label>Game:</label><br>
+<label for="game">Game:</label><br>
 <select id="game">
 <option>Fortnite</option>
 <option>Warzone</option>
@@ -219,7 +232,7 @@ border-top:2px solid #00ffff;
 
 <button onclick="buildPC()">Estimate Performance</button>
 
-<div id="result" class="result-box"></div>
+<div id="result" class="result-box" aria-live="polite"></div>
 
 </div>
 
@@ -272,7 +285,7 @@ GPU: ${gpu}<br>
 RAM: ${ram}<br>
 Game: ${game}<br><br>
 
-<b>Estimated FPS:</b> ${fps}<br>
+<b>Illustrative FPS (not benchmarked):</b> ${fps}<br>
 <b>Recommended Settings:</b> ${level}
 `;
 
