@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Optimization</title>
 
 <style>
@@ -113,6 +115,16 @@ padding:20px;
 border-top:2px solid #00ffff;
 }
 
+/* Keep navigation and wide tables usable on narrow screens. */
+* { box-sizing: border-box; }
+.topnav { flex-wrap: wrap; gap: 8px; }
+.table-scroll { overflow-x: auto; }
+a:focus-visible, button:focus-visible, select:focus-visible { outline: 3px solid #ff00ff; outline-offset: 3px; }
+@media (max-width: 600px) {
+  .hero h1 { font-size: 34px; }
+  .section { padding: 30px 16px; }
+  .card { min-width: 0; }
+}
 </style>
 </head>
 
@@ -130,9 +142,9 @@ border-top:2px solid #00ffff;
 
 <h2>📊 Performance Optimization Analysis</h2>
 
-<p>This page shows how different optimizations impact FPS and system performance.</p>
+<p>This page illustrates optimization concepts. All before/after values and calculator outputs are fictional examples, not measured results or guaranteed gains. Network latency (ms) is separate from rendering performance (FPS).</p>
 
-<table class="build-table">
+<div class="table-scroll" role="region" aria-label="Scrollable comparison table" tabindex="0"><table class="build-table">
 
 <tr>
 <th>Optimization</th>
@@ -176,7 +188,7 @@ border-top:2px solid #00ffff;
 <td>Lower latency</td>
 </tr>
 
-</table>
+</table></div>
 
 </div>
 
@@ -186,7 +198,7 @@ border-top:2px solid #00ffff;
 
 <div class="box">
 
-<label>System Level:</label><br>
+<label for="system">System Level:</label><br>
 <select id="system">
 <option>Low-End PC</option>
 <option>Mid-Range PC</option>
@@ -195,7 +207,7 @@ border-top:2px solid #00ffff;
 
 <br><br>
 
-<label>Optimization Level:</label><br>
+<label for="opt">Optimization Level:</label><br>
 <select id="opt">
 <option>Basic Optimization</option>
 <option>Advanced Optimization</option>
@@ -205,7 +217,7 @@ border-top:2px solid #00ffff;
 
 <button onclick="optimizeCalc()">Calculate FPS Gain</button>
 
-<div id="optResult" class="result-box"></div>
+<div id="optResult" class="result-box" aria-live="polite"></div>
 
 </div>
 
@@ -231,7 +243,7 @@ if(system === "High-End PC") gain = 15;
 if(opt === "Advanced Optimization") gain += 20;
 
 document.getElementById("optResult").innerHTML = `
-<b>Estimated FPS Improvement:</b> +${gain} FPS<br><br>
+<b>Illustrative FPS Improvement (not benchmarked):</b> +${gain} FPS<br><br>
 Optimization techniques can significantly improve performance depending on your system.
 `;
 
